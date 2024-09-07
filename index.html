@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaMonitor</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Imagens/logo1-ret.png" alt="logo do site" id="logo-principal">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Principal</a></li>
+                <li><a href="#">Sensores</a></li>
+                <li><a href="#">Regras</a></li>
+                <li><a href="#">Logs</a></li>
+                <li class="profile">
+                    <!-- <a href="#">Logo Perfil</a> -->
+                    <img src="/Imagens/Sem título-1.png" alt="ícone-perfil-usuário" id="icone-perfil">
+                    <ul class="menu-suspenso">
+                        <li>User2024</li>
+                        <li><a href="#">Editar Perfil</a></li>
+                        <li><a href="#">Configurações</a></li>
+                        <li><a href="#">Sair</a></li>
+                    </ul>
+                </li> <!--fechamento da li profile-->
+            </ul> 
+        </nav>
+    </header>
+
+    <main>
+        <section class="sensor-ph-dados"> <!--sensor 1-->
+            <div class="sensor-ph"> <!--registro 1-->
+                <h2>pH Atual <img src="/Imagens/icone ph.png" alt="ícone de ph" id="icone-ph"></h2>
+                <p id="ph-atual">--</p>
+            </div>
+        </section>
+
+        <section class="sensor-temp-dados"> <!--sensor 2-->
+            <div class="sensor-temperatura"> <!--registro 2-->
+                <h3>Temperatura Máxima 🌡️</h3>
+                <p id="max-temperatura">--°C</p>
+            </div>
+            <div class="sensor-temperatura">
+                <h3>Temperatura Mínima 🌡️</h3>
+                <p id="min-temperatura">--°C</p>
+            </div>
+        </section>
+    </main>
+
+fgf
+<script src="/script.js"></script>
+</body>
+</html>
