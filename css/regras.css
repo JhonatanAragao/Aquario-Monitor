@@ -1,0 +1,73 @@
+.campos-regras {
+    padding-top: 100px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+
+.notificar-ph, .notificar-temperatura{ /*estilo da sessão*/
+    margin-bottom: 20px;
+    background-color: rgba(1, 41, 64, 0.8);
+    color: rgb(219, 219, 221);
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    
+}
+
+.notificar-ph h2, .notificar-temperatura h2 {
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.notificar-ph form, .notificar-temperatura form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+}
+
+.notificar-ph input, .notificar-temperatura input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 50%;
+}
+
+.notificar-ph button, .notificar-temperatura button {
+    padding: 8px;
+    background-color: #012940;
+    color: beige;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.notificar-ph button:hover, .notificar-temperatura button:hover {
+    background-color: #8c9da1;
+}
+
+.informativo {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgba(1, 41, 64, 0.8);
+    color: rgb(219, 219, 221);
+    
+}
+ 

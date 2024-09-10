@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras de Notificação</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/regras.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="/css/Imagens/logo1-ret.png" alt="logo do site" id="logo-principal">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#Sensores">Sensores</a></li>
+                <li><a href="regras.html">Regras de notificações</a></li>
+                <li><a href="#logs">Logs</a></li>
+                <li class="profile">
+                    <img src="/css/Imagens/Sem título-1.png" alt="icone-perfil-usuario" id="icone-perfil">
+                    <ul class="menu-suspenso">
+                        <li>User2024</li>
+                        <li><a href="#">Editar Perfil</a></li>
+                        <li><a href="#">Configurações</a></li>
+                        <li><a href="#">Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="data-hora" id="data-hora"></div> 
+
+    </header>
+
+    <div id="popup-notificacao"></div>
+        <p id="mensagem-notificacao"></p>
+    </div> <!--pop-up de notificação que deve conter em todas as páginas-->
+
+
+    <main class="campos-regras">
+        <section class="notificar-ph">
+            <h2>🔵 Configurar Notificações de pH</h2>
+            <form action="#" method="POST">
+                <label for="ph-min">Defina o pH mínimo tolerável:</label>
+
+                <input type="number" id="ph-min" name="ph-min" step="0.1" placeholder="Ex.: 6.5">
+
+
+                <label for="ph-max">Defina o pH máximo tolerável:</label>
+                <input type="number" id="ph-max" name="ph-max" step="0.1" placeholder="Ex.: 10.0">
+
+                <button type="submit" id="salva-regra-ph">Salvar Configurações</button>
+            </form>
+        </section>
+
+        <section class="notificar-temperatura">
+            <h2>🔵 Configurar Notificações de temperatura 🌡️</h2>
+            <form action="#" method="POST">
+                <label for="temperatura-min">Defina a temperatura mínima tolerável:</label>
+                <input type="number" id="temp-min" name="temp-min" step="0.1" placeholder="Ex.: 10°C">
+
+
+                <label for="temperatura-max">Defina a temperatura máxima tolerável:</label>
+                <input type="number" id="temp-max" name="temp-max" step="0.1" placeholder="Ex.: 20°C">
+
+                <button type="submit" id="salva-regra-temperatura">Salvar Configurações</button>
+            </form>
+        </section>
+
+        <section class="informativo">
+            <p>**O sistema irá lhe notificar toda vez que os sensores registrarem dados configurados com valores mínimos ou máximos</p>
+        </section>
+    </main>
+
+
+    <script src="/script.js"></script>
+    <script src="/popup.js"></script>
+</body>
+</html>

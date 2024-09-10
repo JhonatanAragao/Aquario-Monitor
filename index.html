@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaMonitor</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fontes.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="/Imagens/logo1-ret.png" alt="logo do site" id="logo-principal">
+            <img src="/css/Imagens/logo1-ret.png" alt="logo do site" id="logo-principal">
         </div>
 
         <nav>
             <ul>
-                <li><a href="#">Principal</a></li>
-                <li><a href="#">Sensores</a></li>
-                <li><a href="#">Regras</a></li>
-                <li><a href="#">Logs</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#Sensores">Sensores</a></li>
+                <li><a href="regras.html">Regras de notificações</a></li>
+                <li><a href="#Logs">Logs</a></li>
                 <li class="profile">
                     <!-- <a href="#">Logo Perfil</a> -->
-                    <img src="/Imagens/Sem título-1.png" alt="ícone-perfil-usuário" id="icone-perfil">
+                    <img src="/css/Imagens/Sem título-1.png" alt="ícone-perfil-usuário" id="icone-perfil">
                     <ul class="menu-suspenso">
                         <li>User2024</li>
                         <li><a href="#">Editar Perfil</a></li>
@@ -30,29 +31,61 @@
                 </li> <!--fechamento da li profile-->
             </ul> 
         </nav>
+
+        <div class="data-hora" id="data-hora"></div>
+        
     </header>
 
+    <div id="popup-notificacao" class="popup">
+        <p id="mensagem-notificacao"></p>
+    </div> <!--pop-up de notificação que deve conter em todas as páginas-->
+
     <main>
-        <section class="sensor-ph-dados"> <!--sensor 1-->
-            <div class="sensor-ph"> <!--registro 1-->
-                <h2>pH Atual <img src="/Imagens/icone ph.png" alt="ícone de ph" id="icone-ph"></h2>
-                <p id="ph-atual">--</p>
+        <section class="sensores"> 
+            <div class="sensor-container">
+
+                <div class="sensor-ph">
+                    <div class="leitura-sensor-ph">
+                        <h2>pH Atual <img src="/css/Imagens/ph-1.png" alt="ícone de ph" id="icone-ph"></h2>
+                        <p id="ph-atual">---</p>
+                    </div>
+                    <div class="registros-ph">
+                        <div class="registro-min">
+                            <h3>pH Mínimo registrado</h3>
+                            <p id="ph-min">---</p>
+                        </div>
+                        <div class="registro-max">
+                            <h3>pH Máximo registrado</h3>
+                            <p id="ph-max">---</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sensor-temperatura">
+                    <div class="leitura-sensor-temperatura">
+                        <h2>Temperatura Atual 🌡️</h2>
+                        <p id="temperatura-atual">--°C</p>
+                    </div>
+
+                    <div class="registros-temperatura">
+                        <div class="registro-min">
+                            <h3>Temperatura Mínima registrada 🌡️</h3>
+                            <p id="temperatura-min">--°C</p>
+                        </div>
+                        <div class="registro-max">
+                            <h3>Temperatura Máxima registrada 🌡️</h3>
+                            <p id="temperatura-max">--°C</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="sensor-temp-dados"> <!--sensor 2-->
-            <div class="sensor-temperatura"> <!--registro 2-->
-                <h3>Temperatura Máxima 🌡️</h3>
-                <p id="max-temperatura">--°C</p>
-            </div>
-            <div class="sensor-temperatura">
-                <h3>Temperatura Mínima 🌡️</h3>
-                <p id="min-temperatura">--°C</p>
-            </div>
-        </section>
+
     </main>
 
-fgf
-<script src="/script.js"></script>
+
+    <script src="/script.js"></script>
+    <script src="/popup.js"></script>
 </body>
 </html>
