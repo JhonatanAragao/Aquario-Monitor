@@ -44,3 +44,38 @@ setInterval(atualizaTemp, 2000);
 
 //atualiza a temperatura pela primeira vez
 atualizaTemp();
+
+
+// let temp_min, temp_max;
+
+// temp_min = document.getElementById("temperatura-min");
+// temp_max = document.getElementById("temperatura-max");
+
+// if (valor da temperatura atual < temp_min) {
+//     temp_min = temperatura atual
+// } else if (valor da temperatura atual > temp_max) {
+//     temp_max = temperatura atual
+// }
+
+
+async function salvarTemperatura(tempMin, tempMax) {
+    try {
+        const response = await fetch('salvar_temperatura.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'temp_min': tempMin,
+                'temp_max': tempMax,
+            }),
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const result = await response.text();
+        console.log('Temperatura salva:', result);
+    } catch (error) {
+        console.error('Erro ao salvar a temperatura: ', error);
+    }
+}

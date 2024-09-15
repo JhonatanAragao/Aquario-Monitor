@@ -25,6 +25,8 @@ header {
     align-items: center; /*centraliza os itens verticalmente*/
     height: 80px;
     padding: 0;
+    user-select: none;
+    cursor: default;
 }
 
 .logo {
