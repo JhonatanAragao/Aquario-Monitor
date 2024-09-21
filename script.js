@@ -36,29 +36,19 @@ async function obterTemperatura() {
 function atualizaTemp() {
     obterTemperatura().then(temperatura => {
         document.getElementById("temperatura-atual").innerText = `${temperatura} °C`;
+        atualizarTemperaturaMinMax(temperatura);
     });
 }
 
-//atualiza a temperatura a cada 2 segundos
-setInterval(atualizaTemp, 2000);
+let temp_min = null;
+let temp_max = null;
 
-//atualiza a temperatura pela primeira vez
-atualizaTemp();
-
-
-// let temp_min, temp_max;
-
-// temp_min = document.getElementById("temperatura-min");
-// temp_max = document.getElementById("temperatura-max");
-
-// if (valor da temperatura atual < temp_min) {
-//     temp_min = temperatura atual
-// } else if (valor da temperatura atual > temp_max) {
-//     temp_max = temperatura atual
-// }
-
+temp_min = document.getElementById("temperatura-min");
+temp_max = document.getElementById("temperatura-max");
 
 async function salvarTemperatura(tempMin, tempMax) {
+    console.log(`Enviando: temp_min=${temp_min}, temp_max=${temp_max}`);
+
     try {
         const response = await fetch('salvar_temperatura.php', {
             method: 'POST',
@@ -70,12 +60,38 @@ async function salvarTemperatura(tempMin, tempMax) {
                 'temp_max': tempMax,
             }),
         });
+
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('A rede não tá boa');
         }
+
         const result = await response.text();
         console.log('Temperatura salva:', result);
+
     } catch (error) {
         console.error('Erro ao salvar a temperatura: ', error);
     }
 }
+
+// Função para recuperar os dados de temperatura
+async function recuperarTemperatura() {
+    try {
+        const response = await fetch('recuperar_temperatura.php');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        document.getElementById("temperatura-min").innerText = `Mínima: ${data.temp_min} °C`;
+        document.getElementById("temperatura-max").innerText = `Máxima: ${data.temp_max} °C`;
+    } catch (error) {
+        console.error('Erro ao recuperar a temperatura:', error);
+    }
+}
+
+
+
+//atualiza a temperatura a cada 2 segundos
+setInterval(atualizaTemp, 2000);
+
+//atualiza a temperatura pela primeira vez
+atualizaTemp();
